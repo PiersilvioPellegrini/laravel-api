@@ -15,13 +15,10 @@ class ProjectController extends Controller
         $projects = Project::with( "types", "technologies")->paginate(20);
 
         return response()->json($projects);
-        
+
     }
 
-    /* public function show($id) {
-        $post = Post::with("user", "category", "tags")->findOrFail($id);
-        return response()->json($post);
-    } */
+    
 
     public function show(Project $project)
     {
