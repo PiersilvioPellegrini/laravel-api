@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
+
 
 class ProjectController extends Controller
 {
@@ -15,6 +15,7 @@ class ProjectController extends Controller
         $projects = Project::with( "types", "technologies")->paginate(20);
 
         return response()->json($projects);
+        
     }
 
     /* public function show($id) {
